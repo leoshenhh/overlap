@@ -3,12 +3,12 @@
   "name": "Sample Web Extension",
   "version": "0.0.1",
   "background": {
-    "service_worker": "background.ts",
+    "service_worker": "index.ts",
     "type": "module"
   },
   "action": {
     "default_title": "Overlap",
-    "default_popup": "index.html"
+    "default_popup": "popup/index.html"
   },
   "content_scripts": [{
     "matches": ["http://*/*"],
