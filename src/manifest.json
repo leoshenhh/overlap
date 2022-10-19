@@ -9,5 +9,9 @@
   "action": {
     "default_title": "Overlap",
     "default_popup": "index.html"
-  }
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*"],
+    "js": ["content/main.tsx"]
+  }]
 }
