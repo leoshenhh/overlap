@@ -1,7 +1,9 @@
-import './styles.css'
+import '/src/tailwind.css'
 const App = () => {
   return (
-    <h1>啦啦啦1</h1>
+    <h1 className="bg-black text-3xl font-bold underline">
+    Hello world!
+  </h1>
   )
 }
 export default App
