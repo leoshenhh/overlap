@@ -1,7 +1,10 @@
 import { useState, useEffect, useRef } from "react";
-import './app.scss'
+import Control from "./Control";
+import "./app.scss";
 
 const App = () => {
+  const controlList: Array<string> = ["left", "top", "bottom", "right"];
+
   const [top, setTop] = useState(0);
   const [left, setLeft] = useState(0);
 
@@ -9,6 +12,9 @@ const App = () => {
 
   const [mouseX, setMouseX] = useState(0);
   const [mouseY, setMouseY] = useState(0);
+
+  const [width, setWidth] = useState(100);
+  const [height, setHeight] = useState(100);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -18,7 +24,6 @@ const App = () => {
   };
 
   const handleMouseMove = (e: MouseEvent) => {
-
     if (moveable) {
       const x = e.pageX - mouseX;
       const y = e.pageY - mouseY;
@@ -38,23 +43,32 @@ const App = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [moveable]);
 
-
   return (
     <div
       onMouseDown={(e) => handleMouseDown(e)}
       onMouseUp={(e) => handleMouseUp(e)}
       className="overlap"
       style={{
-        width: "100px",
-        height: "100px",
-        position: "fixed",
+        width: width + "px",
+        height: height + "px",
         top: top + "px",
         left: left + "px",
-        color: "white",
       }}
     >
-      <div>{mouseX}</div>
-      <div>{mouseY}</div>
+      {controlList.map((item) => (
+        <Control
+          key={item}
+          position={item}
+          width={width}
+          setWidth={setWidth}
+          left={left}
+          setLeft={setLeft}
+          height={height}
+          setHeight={setHeight}
+          top={top}
+          setTop={setTop}
+        ></Control>
+      ))}
     </div>
   );
 };

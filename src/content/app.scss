@@ -1,4 +1,43 @@
-.overlap{
-  background: red;
+.overlap {
+  position: absolute;
+  backdrop-filter: blur(6px);
   cursor: move;
+  z-index: 2147483647;
+  // &:hover {
+    outline: 2px solid blue;
+    outline-offset: 5px;
+    outline-style: dashed;
+  // }
+  .control {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: black;
+    margin: auto;
+    z-index: 99999;
+  }
+  .control.left{
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    cursor: ew-resize;
+  }
+  .control.right{
+    right: -10px;
+    top: 0;
+    bottom: 0;
+    cursor: ew-resize;
+  }
+  .control.bottom{
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    cursor: ns-resize;
+  }
+  .control.top{
+    top: -10px;
+    left: 0;
+    right: 0;
+    cursor: ns-resize;
+  }
 }
