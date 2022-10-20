@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@parcel/config-webextension': ^2.7.0
+  '@parcel/transformer-sass': 2.7.0
   '@types/react': ^18.0.21
   '@types/react-dom': ^18.0.6
   parcel: ^2.7.0
@@ -17,6 +18,7 @@ dependencies:
 
 devDependencies:
   '@parcel/config-webextension': 2.7.0_postcss@8.4.18
+  '@parcel/transformer-sass': 2.7.0
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
   parcel: 2.7.0_postcss@8.4.18
@@ -400,7 +402,7 @@ packages:
       '@parcel/package-manager': 2.7.0_@parcel+core@2.7.0
       '@parcel/plugin': 2.7.0
       '@parcel/source-map': 2.1.1
-      '@parcel/types': 2.7.0_@parcel+core@2.7.0
+      '@parcel/types': 2.7.0
       '@parcel/utils': 2.7.0
       '@parcel/workers': 2.7.0_@parcel+core@2.7.0
       abortcontroller-polyfill: 1.7.5
@@ -720,17 +722,15 @@ packages:
       - '@parcel/core'
     dev: true
 
-  /@parcel/reporter-cli/2.7.0_@parcel+core@2.7.0:
+  /@parcel/reporter-cli/2.7.0:
     resolution: {integrity: sha512-80gEODg8cnAmnxGVuaSVDo8JJ54P9AA2bHwSs1cIkHWlJ3BjDQb83H31bBHncJ5Kn5kQ/j+7WjlqHpTCiOR9PA==}
     engines: {node: '>= 12.0.0', parcel: ^2.7.0}
     dependencies:
       '@parcel/plugin': 2.7.0
-      '@parcel/types': 2.7.0_@parcel+core@2.7.0
+      '@parcel/types': 2.7.0
       '@parcel/utils': 2.7.0
       chalk: 4.1.2
       term-size: 2.2.1
-    transitivePeerDependencies:
-      - '@parcel/core'
     dev: true
 
   /@parcel/reporter-dev-server/2.7.0:
@@ -985,6 +985,17 @@ packages:
       - '@parcel/core'
     dev: true
 
+  /@parcel/transformer-sass/2.7.0:
+    resolution: {integrity: sha512-6m2T6Y5eQLX7ckIeuOjXXIZbzhyovnl69AvJ2FujoWb2nA55H/kg6ZdbKjo3CfXkOfg9LyG3nVnOE5PMgMpRFQ==}
+    engines: {node: '>= 12.0.0', parcel: ^2.7.0}
+    dependencies:
+      '@parcel/plugin': 2.7.0
+      '@parcel/source-map': 2.1.1
+      sass: 1.55.0
+    transitivePeerDependencies:
+      - '@parcel/core'
+    dev: true
+
   /@parcel/transformer-svg/2.7.0:
     resolution: {integrity: sha512-ioER37zceuuE+K6ZrnjCyMUWEnv+63hIAFResc1OXxRhyt+7kzMz9ZqK0Mt6QMLwl1dxhkLmrU41n9IxzKZuSQ==}
     engines: {node: '>= 12.0.0', parcel: ^2.7.0}
@@ -1023,20 +1034,6 @@ packages:
       '@parcel/package-manager': 2.7.0
       '@parcel/source-map': 2.1.1
       '@parcel/workers': 2.7.0
-      utility-types: 3.10.0
-    transitivePeerDependencies:
-      - '@parcel/core'
-    dev: true
-
-  /@parcel/types/2.7.0_@parcel+core@2.7.0:
-    resolution: {integrity: sha512-+dhXVUnseTCpJvBTGMp0V6X13z6O/A/+CUtwEpMGZ8XSmZ4Gk44GvaTiBOp0bJpWG4fvCKp+UmC8PYbrDiiziw==}
-    dependencies:
-      '@parcel/cache': 2.7.0_@parcel+core@2.7.0
-      '@parcel/diagnostic': 2.7.0
-      '@parcel/fs': 2.7.0_@parcel+core@2.7.0
-      '@parcel/package-manager': 2.7.0_@parcel+core@2.7.0
-      '@parcel/source-map': 2.1.1
-      '@parcel/workers': 2.7.0_@parcel+core@2.7.0
       utility-types: 3.10.0
     transitivePeerDependencies:
       - '@parcel/core'
@@ -1581,6 +1578,10 @@ packages:
       entities: 3.0.1
     dev: true
 
+  /immutable/4.1.0:
+    resolution: {integrity: sha512-oNkuqVTA8jqG1Q6c+UglTOD1xhC1BtjKI7XkCXRkZHrN5m18/XsnUp8Q89GkQO/z+0WjonSvl0FLhDYftp46nQ==}
+    dev: true
+
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -1869,7 +1870,7 @@ packages:
       '@parcel/fs': 2.7.0_@parcel+core@2.7.0
       '@parcel/logger': 2.7.0
       '@parcel/package-manager': 2.7.0_@parcel+core@2.7.0
-      '@parcel/reporter-cli': 2.7.0_@parcel+core@2.7.0
+      '@parcel/reporter-cli': 2.7.0
       '@parcel/reporter-dev-server': 2.7.0
       '@parcel/utils': 2.7.0
       chalk: 4.1.2
@@ -2109,6 +2110,16 @@ packages:
 
   /safe-buffer/5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
+    dev: true
+
+  /sass/1.55.0:
+    resolution: {integrity: sha512-Pk+PMy7OGLs9WaxZGJMn7S96dvlyVBwwtToX895WmCpAOr5YiJYEUJfiJidMuKb613z2xNWcXCHEuOvjZbqC6A==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.1.0
+      source-map-js: 1.0.2
     dev: true
 
   /scheduler/0.23.0:
